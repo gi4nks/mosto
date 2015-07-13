@@ -1,0 +1,2 @@
+# mosto
+Learning golang
