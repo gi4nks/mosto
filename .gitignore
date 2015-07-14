@@ -22,5 +22,9 @@ _testmain.go
 *.exe
 *.test
 *.prof
+<<<<<<< HEAD
 mosto
 mosto.iml
+=======
+/mosto
+>>>>>>> 972c1979291ba29a985caaa0a7d3dfb4c7f4eb8a
