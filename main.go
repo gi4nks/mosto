@@ -42,6 +42,12 @@ func main() {
 			Usage:   "functions",
 			Action:  functionsSample,
 		},
+		{
+			Name:    "loggers",
+			Aliases: []string{"l"},
+			Usage:   "loggers",
+			Action:  loggersSample,
+		},
 	}
 
 	app.Run(os.Args)
@@ -108,4 +114,10 @@ func functionsSample(ctx *cli.Context) {
 	tracer.Notice("functions ...")
 
 	Functions()
+}
+
+func loggersSample(ctx *cli.Context) {
+	tracer.Notice("loggers ...")
+
+	LoggerSample()
 }
