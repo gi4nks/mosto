@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/codegangsta/cli"
-	"os"
 	"github.com/gi4nks/quant"
+	"os"
 )
 
 var tracer = quant.NewTrace("mosto")
@@ -41,6 +41,24 @@ func main() {
 			Aliases: []string{"f"},
 			Usage:   "functions",
 			Action:  functionsSample,
+		},
+		{
+			Name:    "tideot",
+			Aliases: []string{"t"},
+			Usage:   "tideot",
+			Action:  tideotSample,
+		},
+		{
+			Name:    "randoms",
+			Aliases: []string{"r"},
+			Usage:   "randoms",
+			Action:  randomsSample,
+		},
+		{
+			Name:    "loggers",
+			Aliases: []string{"l"},
+			Usage:   "loggers",
+			Action:  loggersSample,
 		},
 	}
 
@@ -108,4 +126,30 @@ func functionsSample(ctx *cli.Context) {
 	tracer.Notice("functions ...")
 
 	Functions()
+}
+
+func tideotSample(ctx *cli.Context) {
+	tracer.Notice("tideot ...")
+
+	//EmbeddedExample()
+	PersistentSample1()
+}
+
+func randomsSample(ctx *cli.Context) {
+	tracer.Notice("randoms ...")
+
+	RandomsSample1()
+	RandomsSample2()
+	RandomsSample3()
+	RandomsSample4()
+
+}
+
+func loggersSample(ctx *cli.Context) {
+	tracer.Notice("loggers ...")
+
+	LoggerSample1()
+	LoggerSample2()
+	LoggerSample3()
+
 }
