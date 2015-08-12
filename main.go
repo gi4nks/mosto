@@ -60,6 +60,18 @@ func main() {
 			Usage:   "loggers",
 			Action:  loggersSample,
 		},
+		{
+			Name:    "compressors",
+			Aliases: []string{"c"},
+			Usage:   "compressors",
+			Action:  compressorSample,
+		},
+		{
+			Name:    "docker",
+			Aliases: []string{"d"},
+			Usage:   "docker",
+			Action:  dockerSample,
+		},
 	}
 
 	app.Run(os.Args)
@@ -152,4 +164,28 @@ func loggersSample(ctx *cli.Context) {
 	LoggerSample2()
 	LoggerSample3()
 
+}
+
+func loggersSample(ctx *cli.Context) {
+	tracer.Notice("loggers ...")
+
+	LoggerSample()
+}
+
+func compressorSample(ctx *cli.Context) {
+	tracer.Notice("compressors ...")
+
+	var b = Compress("hello world")
+
+	tracer.News(b)
+
+	var b1 = Uncompress(b)
+
+	tracer.News(b1)
+}
+
+func dockerSample(ctx *cli.Context) {
+	tracer.Notice("docker ...")
+
+	DockerClientTest()
 }
