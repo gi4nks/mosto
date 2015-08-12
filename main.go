@@ -54,6 +54,12 @@ func main() {
 			Usage:   "compressors",
 			Action:  compressorSample,
 		},
+		{
+			Name:    "docker",
+			Aliases: []string{"d"},
+			Usage:   "docker",
+			Action:  dockerSample,
+		},
 	}
 
 	app.Run(os.Args)
@@ -138,4 +144,10 @@ func compressorSample(ctx *cli.Context) {
 	var b1 = Uncompress(b)
 	
 	tracer.News(b1)
+}
+
+func dockerSample(ctx *cli.Context) {
+	tracer.Notice("docker ...")
+
+	DockerClientTest()
 }
