@@ -166,12 +166,6 @@ func loggersSample(ctx *cli.Context) {
 
 }
 
-func loggersSample(ctx *cli.Context) {
-	tracer.Notice("loggers ...")
-
-	LoggerSample()
-}
-
 func compressorSample(ctx *cli.Context) {
 	tracer.Notice("compressors ...")
 
